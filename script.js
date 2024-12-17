@@ -43,91 +43,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact form handling
-const contactForm = document.getElementById('contact-form');
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    // Add your form submission logic here
-    console.log('Form submitted');
-});
-
-// Google Places API configuration
-function initGoogleReviews() {
-    // You'll need to replace this with your actual Google Places API key
-    const apiKey = 'YOUR_GOOGLE_PLACES_API_KEY';
-    // Replace with your business's Place ID
-    const placeId = 'YOUR_PLACE_ID';
-
-    // Load the Places library
-    const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
-    script.defer = true;
-    script.async = true;
-    script.onload = () => {
-        const service = new google.maps.places.PlacesService(document.createElement('div'));
-        
-        service.getDetails({
-            placeId: placeId,
-            fields: ['rating', 'reviews', 'user_ratings_total']
-        }, (place, status) => {
-            if (status === google.maps.places.PlacesServiceStatus.OK) {
-                updateReviewsWidget(place);
-            }
-        });
-    };
-    document.head.appendChild(script);
-}
-
-function updateReviewsWidget(place) {
-    // Update rating
-    const ratingElement = document.getElementById('rating');
-    ratingElement.textContent = place.rating.toFixed(1);
-
-    // Update review count
-    const reviewCountElement = document.getElementById('review-count');
-    reviewCountElement.textContent = `(${place.user_ratings_total} reviews)`;
-
-    // Update stars
-    const starsElement = document.querySelector('.stars');
-    starsElement.innerHTML = generateStars(place.rating);
-
-    // Update recent reviews
-    const recentReviewsElement = document.getElementById('recent-reviews');
-    const recentReviews = place.reviews.slice(0, 3); // Show top 3 reviews
-    recentReviewsElement.innerHTML = recentReviews
-        .map(review => `
-            <div class="review">
-                <div class="review-stars">${generateStars(review.rating)}</div>
-                <p class="review-text">${review.text.slice(0, 150)}${review.text.length > 150 ? '...' : ''}</p>
-                <p class="review-author">- ${review.author_name}</p>
-            </div>
-        `).join('');
-}
-
-function generateStars(rating) {
-    const fullStar = '<i class="fas fa-star"></i>';
-    const halfStar = '<i class="fas fa-star-half-alt"></i>';
-    const emptyStar = '<i class="far fa-star"></i>';
-    
-    let stars = '';
-    const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 >= 0.5;
-    
-    for (let i = 0; i < 5; i++) {
-        if (i < fullStars) {
-            stars += fullStar;
-        } else if (i === fullStars && hasHalfStar) {
-            stars += halfStar;
-        } else {
-            stars += emptyStar;
-        }
-    }
-    return stars;
-}
-
-// Initialize reviews when the page loads
-document.addEventListener('DOMContentLoaded', initGoogleReviews);
-
 // Portfolio Carousel
 document.addEventListener('DOMContentLoaded', () => {
     const slider = document.querySelector('.portfolio-slider');
@@ -160,5 +75,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize slider
     updateSlider();
 });
-
-// AI scheduling bot integration will be added here
