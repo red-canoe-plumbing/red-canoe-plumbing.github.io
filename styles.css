@@ -1,7 +1,10 @@
 :root {
-    --blue: #62c8cb;  /* From logo water */
-    --orange: #e96e41;  /* From logo sunset */
-    --yellow: #f0c334;  /* From logo inner sunset */
+    --blue: #62c8cb;
+    /* From logo water */
+    --orange: #e96e41;
+    /* From logo sunset */
+    --yellow: #f0c334;
+    /* From logo inner sunset */
     --text-color: #333333;
 }
 
@@ -23,7 +26,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     line-height: 1.3;
@@ -116,9 +124,11 @@ p {
     0% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(-5px);
     }
+
     100% {
         transform: translateY(0px);
     }
@@ -152,6 +162,7 @@ p {
         opacity: 0;
         transform: scale(0.8);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -164,7 +175,8 @@ p {
 }
 
 .stars {
-    color: #ffd700;  /* Golden color for stars */
+    color: #ffd700;
+    /* Golden color for stars */
     font-size: 2rem;
     margin-bottom: 0.5rem;
 }
@@ -219,9 +231,20 @@ p {
     text-align: center;
 }
 
-.blue-bg { background-color: var(--blue); color: white; }
-.orange-bg { background-color: var(--orange); color: white; }
-.yellow-bg { background-color: var(--yellow); color: white; }
+.blue-bg {
+    background-color: var(--blue);
+    color: white;
+}
+
+.orange-bg {
+    background-color: var(--orange);
+    color: white;
+}
+
+.yellow-bg {
+    background-color: var(--yellow);
+    color: white;
+}
 
 .section.blue-bg p,
 .section.orange-bg p,
@@ -326,141 +349,15 @@ p {
     padding: 4rem 0;
 }
 
-.portfolio-container {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 6rem;
-}
-
-.portfolio-slider {
-    display: flex;
-    overflow: hidden;
-    scroll-behavior: smooth;
-    gap: 2rem;
-    padding: 1rem 0;
-}
-
-.portfolio-item {
-    flex: 0 0 calc(33.333% - 1.33rem);
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #bbb;
-    color: white;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 10;
-    transition: background-color 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: none;
-    flex-shrink: 0;
-}
-
-.carousel-button:hover {
-    background: #aaa;
-}
-
-.carousel-button.prev {
-    left: -10px;
-}
-
-.carousel-button.next {
-    right: -10px;
-}
-
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    margin-top: 2rem;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #ccc;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.dot.active {
-    background: var(--blue);
-}
-
-@media (max-width: 768px) {
-    .portfolio-container {
-        padding: 0 2rem;
-    }
-    
-    .portfolio-slider {
-        margin: 0 1rem;
-    }
-    
-    .portfolio-item {
-        flex: 0 0 calc(100% - 2rem);
-    }
-    
-    .carousel-button {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-    
-    .carousel-button.prev {
-        left: 0.5rem;
-    }
-    
-    .carousel-button.next {
-        right: 0.5rem;
-    }
-}
-
-/* Contact Section */
-.contact-container {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    font-size: 1.1rem;
-}
-
-#contact-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-input, textarea, button {
+input,
+textarea,
+button {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
 }
 
-input, textarea {
+input,
+textarea {
     width: 100%;
     padding: 0.8rem;
     border: 1px solid #ddd;
@@ -476,16 +373,16 @@ button {
     background: var(--orange);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 50%;
     cursor: pointer;
     font-weight: 500;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    transition: opacity 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    opacity: 0.7;
+    background-color: #9a9a9a;
 }
 
 .customer-widget {
@@ -509,18 +406,129 @@ button:hover {
     color: var(--orange);
 }
 
+/* Glide.js Styles */
+.glide {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 40px;
+}
+
+.glide__track {
+    overflow: hidden;
+}
+
+.glide__slides {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.glide__slide {
+    padding: 10px;
+}
+
+.portfolio-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-img:hover {
+    transform: scale(1.02);
+}
+
+.glide__arrow {
+    position: absolute;
+    top: 50%;
+    background-color: #bbb;
+    transform: translateY(-50%);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+    z-index: 2;
+    padding: 0;
+}
+
+.glide__arrow:hover {
+    background-color: #ccc;
+}
+
+.glide__arrow--left {
+    left: -10px;
+}
+
+.glide__arrow--right {
+    right: -10px;
+}
+
+.glide__arrow i {
+    font-size: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .glide {
+        padding: 0 40px;
+    }
+    
+    .glide__arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .glide__arrow i {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .glide {
+        padding: 0 30px;
+    }
+    
+    .glide__arrow {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .glide__arrow i {
+        font-size: 14px;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .service-grid {
         flex-direction: column;
     }
-    
+
     .contact-container {
         flex-direction: column;
     }
-    
+
     .nav-links {
-        flex-direction: column;
-        align-items: center;
+        display: none;
     }
+}
+
+#portfolio-slider {
+    width: 100%;
+    height: 400px;
+}
+
+.portfolio-img {
+    max-width: 600px;
+    height: 400px;
 }

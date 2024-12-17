@@ -42,36 +42,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
-
-// Portfolio Carousel
-document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.querySelector('.portfolio-slider');
-    const prevButton = document.querySelector('.carousel-button.prev');
-    const nextButton = document.querySelector('.carousel-button.next');
-    const slides = document.querySelectorAll('.portfolio-item');
-    let currentIndex = 0;
-
-    function updateSlider() {
-        slides.forEach((slide, index) => {
-            slide.style.display = 'none';
-        });
-        for (let i = 0; i < 3; i++) {
-            if (currentIndex + i < slides.length) {
-                slides[currentIndex + i].style.display = 'block';
-            }
-        }
-    }
-
-    prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 3;
-        updateSlider();
-    });
-
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex < slides.length - 3) ? currentIndex + 1 : 0;
-        updateSlider();
-    });
-
-    // Initialize slider
-    updateSlider();
-});
