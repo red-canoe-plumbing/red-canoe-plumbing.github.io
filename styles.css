@@ -1,9 +1,9 @@
 :root {
-    --blue: #62c8cb;
+    --blue: #33b9d5;
     /* From logo water */
-    --orange: #e96e41;
+    --red: #cb3433;
     /* From logo sunset */
-    --yellow: #f0c334;
+    --yellow: #fcab3c;
     /* From logo inner sunset */
     --text-color: #333333;
 }
@@ -32,20 +32,21 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    line-height: 1.3;
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+    line-height: 1.1;
     margin-bottom: 1.5rem;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     margin-bottom: 2rem;
 }
 
 h3 {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     color: var(--blue);
     margin-bottom: 1.5rem;
 }
@@ -236,8 +237,8 @@ p {
     color: white;
 }
 
-.orange-bg {
-    background-color: var(--orange);
+.red-bg {
+    background-color: var(--red);
     color: white;
 }
 
@@ -247,7 +248,7 @@ p {
 }
 
 .section.blue-bg p,
-.section.orange-bg p,
+.section.red-bg p,
 .section.yellow-bg p {
     color: white;
 }
@@ -339,11 +340,11 @@ p {
 }
 
 .icon-grid i:hover {
-    color: var(--orange);
+    color: var(--red);
 }
 
-/* Portfolio Section */
-#portfolio {
+/* gallery Section */
+#gallery {
     background-color: #f5f5f5;
     text-align: center;
     padding: 4rem 0;
@@ -370,7 +371,7 @@ textarea {
 
 button {
     padding: 1rem 2rem;
-    background: var(--orange);
+    background: var(--red);
     color: white;
     border: none;
     border-radius: 50%;
@@ -403,7 +404,7 @@ button:hover {
 }
 
 .social-link:hover {
-    color: var(--orange);
+    color: var(--red);
 }
 
 /* Glide.js Styles */
@@ -429,7 +430,7 @@ button:hover {
     padding: 10px;
 }
 
-.portfolio-img {
+.gallery-img {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -438,7 +439,7 @@ button:hover {
     transition: transform 0.3s ease;
 }
 
-.portfolio-img:hover {
+.gallery-img:hover {
     transform: scale(1.02);
 }
 
@@ -523,12 +524,19 @@ button:hover {
     }
 }
 
-#portfolio-slider {
+#gallery-slider {
     width: 100%;
     height: 400px;
 }
 
-.portfolio-img {
+.gallery-img {
     max-width: 600px;
     height: 400px;
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
 }
