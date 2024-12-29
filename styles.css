@@ -224,12 +224,18 @@ p {
 /* Sections */
 .section {
     min-height: 100vh;
-    padding: 6rem 2rem;
+    padding: 8rem 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.section p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .blue-bg {
